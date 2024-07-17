@@ -1,0 +1,445 @@
+/* styles.css */
+
+/* Reset and general styles */
+body {
+    font-family: sancola system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('GMT_TP_Wave_Sep23_PurplePink2.png') repeat-y center top / 100% auto;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: none;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    position: relative;
+}
+.logo-icon {
+    width: 20px; /* Adjust the width as per your design */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Optional: Adjust spacing between logo and text */
+    vertical-align: middle; /* Align the logo vertically with the text */
+}
+
+/* Arrow styles */
+nav ul li a::after
+  {
+    content: '';
+    position: absolute;
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
+}
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ff0080; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a::before {
+    top: 50%;
+}
+
+nav ul li a:hover::after,
+nav ul li a:hover::before {
+    border-top-color: #ff0080; /* Hover arrow color */
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow */
+}
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: whitesmoke;
+    box-shadow: none;
+    z-index: 10;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li .dropdown li a {
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    font-weight: normal; /* Normal font weight for dropdown items */
+    white-space: nowrap; /* Ensures text is in one line */
+}
+
+nav ul li .dropdown li a:hover {
+    background-color: transparent;
+}
+
+.contact-us {
+    color: #fff;
+    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+    border-radius: 5px;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+
+.mobile-dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: transparent;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    box-shadow: none;
+    z-index: 10;
+}
+
+.mobile-dropdown.show {
+    display: flex;
+}
+
+.mobile-dropdown li {
+    margin: 0;
+    padding: 10px;
+}
+
+.mobile-dropdown li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: normal; /* Normal font weight for mobile dropdown items */
+    white-space: nowrap; /* Ensures text is in one line */
+}
+
+.mobile-dropdown li a:hover {
+    background-color: transparent;
+}
+
+/* Intro section styles */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: transparent;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    flex: 1;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.intro-text h1 {
+    font-size: 85px; /* Increase the size */
+    font-weight: bold;
+    color: #333;
+}
+
+.intro-text .highlight {
+    font-size: 120px; /* Increase the size more for the highlight */
+    color: #ff0080;
+    background: #ff0080 ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.intro-video {
+    flex: 2;
+    max-width: 66%;
+    border: 10px solid #FF0082;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/* Job section styles */
+.job-section {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    flex-wrap: wrap;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('GMT_TP_Wave_Sep23_PurplePink.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
+}
+.container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+}
+
+.generate-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px; /* Space between button and h1 */
+}
+
+.hot-job {
+    flex: 1;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 33%;
+}
+
+.find-job {
+    flex: 2;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 66%;
+}
+
+.hot-job h2, .find-job h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hot-job h1, .find-job h1 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.hot-job p, .find-job p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.highlighted-word {
+    color: #ff0080;
+    font-weight: bold;
+}
+
+.dropdowns {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.dropdowns label {
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+.dropdowns select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.apply-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.generate-btn {
+    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+}
+
+.apply-btn {
+    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+}
+
+.apply-btn:hover, .generate-btn:hover {
+    background: linear-gradient(45deg, #ff6b6b, #ff0080);
+}
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scrolling if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Set max width for larger screens */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center-align text and elements */
+    position: relative; /* For close button positioning */
+}
+
+.close {
+    color: #aaa;
+    position: absolute; /* Position close button */
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#job-url {
+    color: pink; /* Pink color for the link */
+    display: block; /* Display as block for better spacing */
+    margin: 10px 0; /* Margin for spacing */
+    font-size: 18px; /* Increase font size */
+    text-decoration: none; /* Remove underline */
+}
+
+#job-url:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+#qr-code {
+    display: block;
+    margin: 20px auto; /* Center the QR code */
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 999; /* Ensure it's above modal */
+}
+
+
+/* Footer styles */
+footer {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: rgba(66, 66, 66, 0.9);
+    color: white;
+    position: relative; /* Position it normally within the flow */
+     margin-top: 50px; /* Space above the footer */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-right {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .intro {
+        flex-direction: column;
+    }
+
+    .intro-video {
+        max-width: 100%;
+    }
+
+    .job-section {
+        flex-direction: column;
+    }
+
+    .mobile-dropdown.show {
+        display: block;
+    }
+    .intro-text {
+        font-size: 16px; /* Adjust this size as needed */}
+    }

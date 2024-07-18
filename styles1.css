@@ -404,32 +404,32 @@ nav ul li .dropdown li a:hover {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background-color: #0087FF; /* Pink background color */
+    background-color: transparent; /* Pink background color */
     color: white; /* White text color */
     text-align: center; /* Center-align text */
 }
 
 /* Share button logos */
 #share-button-whatsapp {
-    background-image: url('image (11)-Photoroom.png');
+    background-image: url('output-onlinepngtools\ \(1\).png');
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 #share-button-line {
-    background-image: url('output-onlinepngtools-Photoroom.png');
+    background-image: url('output-onlinepngtools\ \(2\).png');
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 #share-button-facebook {
-    background-image: url('fbpiink-removebg-preview.png');
+    background-image: url('output-onlinepngtools\ \(3\).png');
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 #share-button-IG {
-    background-image: url('igpinnk-removebg-preview.png');
+    background-image: url('output-onlinepngtools\ \(4\).png');
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -454,6 +454,7 @@ footer {
     flex-wrap: wrap;
     z-index: 1000; /* Keeps it above other elements */
 }
+
 
 .footer-left, .footer-right {
     margin: 0;

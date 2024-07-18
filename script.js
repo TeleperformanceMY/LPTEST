@@ -87,18 +87,26 @@ document.addEventListener('DOMContentLoaded', () => {
         '.find-job h2': 'find_job',
         '.intro-text1 h1': 'intro_text1',
         '.intro-text1 h2': 'intro_text2',
-        'header ul li:nth-child(1) a': 'about_us',
-        'header ul li:nth-child(2) a': 'careers',
-        'header ul li:nth-child(2) ul li:nth-child(1) a': 'hot_job',
-        'header ul li:nth-child(2) ul li:nth-child(2) a': 'opportunities',
-        'header ul li:nth-child(2) ul li:nth-child(3) a': 'refer_friend',
-        'header ul li:nth-child(3) a': 'stay_connected',
-        'header ul li:nth-child(4) a': 'contact_us',
+        'header ul li:nth-child(1) > a': 'about_us',
+        'header ul li:nth-child(1) ul li:nth-child(1) > a': 'tp_malaysia',
+        'header ul li:nth-child(1) ul li:nth-child(2) > a': 'tp_thailand',
+        'header ul li:nth-child(3) > a': 'careers',
+        'header ul li:nth-child(2) ul li:nth-child(1) > a': 'hot_job',
+        'header ul li:nth-child(2) ul li:nth-child(2) > a': 'opportunities',
+        'header ul li:nth-child(2) ul li:nth-child(3) > a': 'refer_friend',
+        'header ul li:nth-child(3) > a': 'stay_connected',
+        'header ul li:nth-child(3) ul li:nth-child(1) > a': 'tpmy_instagram',
+        'header ul li:nth-child(3) ul li:nth-child(2) > a': 'tpth_instagram',
+        'header ul li:nth-child(3) ul li:nth-child(3) > a': 'tpmy_facebook',
+        'header ul li:nth-child(3) ul li:nth-child(4) > a': 'tpth_facebook',
+        '.contact-us': 'contact_us',
         '.language-dropdown > a': 'language',
+        '.language-dropdown ul li:nth-child(1) > a': 'english',
+        '.language-dropdown ul li:nth-child(2) > a': 'mandarin',
+        '.language-dropdown ul li:nth-child(3) > a': 'japanese',
         '.share-buttons h2': 'share_via',
-        '.hot-job h2':'hot_job_content',
-        '.apply-btn' :'apply_now'
-
+        '.hot-job h2': 'hot_job_content',
+        '.apply-btn': 'apply_now'
     };
     
     const dropdown = document.querySelector('.language-dropdown');

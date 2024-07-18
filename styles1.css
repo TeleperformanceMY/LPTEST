@@ -441,25 +441,31 @@ nav ul li .dropdown li a:hover {
 }
 
 
+ 
+
+/* Footer styles */
 footer {
     padding: 10px 20px;
     text-align: center;
     background-color: rgba(66, 66, 66, 0.9);
     color: white;
-    position: fixed; /* Fixes the footer at the bottom */
     bottom: 0; /* Positions it at the bottom */
     width: 98%; /* Ensures it spans the entire width of the page */
+    position: fixed; /* Position it normally within the flow */
+     margin-top: 50px; /* Space above the footer */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    z-index: 1000; /* Keeps it above other elements */
 }
-
 
 .footer-left, .footer-right {
     margin: 0;
 }
+
 @media (max-width: 768px) {
+    footer{
+        position: relative;
+    }
     nav ul {
         display: none;
     }

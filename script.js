@@ -452,3 +452,13 @@ document.getElementById("share-button-IG").addEventListener("click", function() 
     window.open(instagramLink, "_blank");
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileDropdown = document.querySelector('.mobile-dropdown');
+
+    if (mobileMenuButton && mobileDropdown) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileDropdown.classList.toggle('show');
+        });
+    }
+});

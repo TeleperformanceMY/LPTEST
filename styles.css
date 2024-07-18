@@ -558,10 +558,7 @@ footer {
             font-size: 14px;
             padding: 8px;
         }
-    }
-    
-    
-    @media (max-width: 768px) {
+  
         /* Mobile view */
         .modal {
             display: block; /* Display modal in mobile view */

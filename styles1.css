@@ -124,17 +124,87 @@ nav ul li .dropdown li a:hover {
     background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
     border-radius: 5px;
 }
+/* Mobile menu styles */
+/* Show mobile menu button on mobile view */
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block; /* Show mobile menu on mobile */
+    }
 
-.mobile-menu {
-    display: none;
+    .mobile-menu-button {
+        display: block; /* Show menu button on mobile */
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: transparent;
+        background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient text color */
+        -webkit-background-clip: text;
+        background-clip: text;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .mobile-dropdown {
+        display: none; /* Hide dropdown by default */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #fefefe;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .mobile-dropdown.show {
+        display: block; /* Show dropdown when .show is added */
+    }
 }
 
-.mobile-menu-button {
-    display: none;
-    background: none;
+/* Hide mobile menu on desktop view */
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none; /* Hide mobile menu on desktop */
+    }
+
+    .mobile-menu-button {
+        display: none; /* Hide menu button on desktop */
+    }
+}
+
+/* Styles for the dropdown items */
+.mobile-dropdown li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-dropdown li a {
+    color: #3047B0; /* Color of the links */
+    text-decoration: none;
+    display: block;
+}
+
+.mobile-dropdown li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Gradient effect for .back-button */
+/* Gradient effect for .back-button */
+.back-button {
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
+    color: white;
     border: none;
-    font-size: 24px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
 }
+
+.back-button:hover {
+    background-color: #0087FF;
+}
+ 
 
 /* Intro section styles */
 .intro {
@@ -143,55 +213,58 @@ nav ul li .dropdown li a:hover {
     align-items: flex-start;
     padding: 20px;
     background-color: transparent;
-    flex-wrap: wrap;
 }
 
-.intro-text {
-    flex: 1;
+.intro-text1 {
+    flex: 0 0 33.33%; /* Takes 1/3 of the space */
     padding: 0px;
     background-color: transparent;
+    margin-right: 20px; /* Add some space between the sections */
 }
 
-.intro-text h1 {
+.intro-text1 h1 {
     font-size: 70px; /* Increase the size */
     font-weight: bold;
     color: #333;
 }
 
-.intro-text .highlight {
+.intro-text1 .highlight {
     font-size: 100px; /* Increase the size more for the highlight */
     color: #0087FF;
-    background: #0087FF ;
+    background: #0087FF;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
 }
 
+.intro-text1 h2 {
+    font-weight: lighter;
+}
+
+.highlighted-word {
+    color: #0087FF;
+    font-weight: bold;
+}
+
 .find-job {
-    flex: 2;
+    flex: 0 0 60%; /* Takes 2/3 of the space */
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 10px;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    width: 66%;
-}
+ }
 
-.hot-job h2, .find-job h2 {
+.find-job h2 {
     color: #333;
     margin-bottom: 20px;
 }
 
-.hot-job h1, .find-job h1 {
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.hot-job p, .find-job p {
+.find-job p {
     color: #555;
     margin-bottom: 20px;
 }
+
 .container {
     display: flex;
     align-items: center; /* Align items vertically centered */
@@ -200,19 +273,22 @@ nav ul li .dropdown li a:hover {
 .dropdowns {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;}
+    margin-bottom: 20px;
+}
 
 .dropdowns label {
     margin-bottom: 10px;
     color: #555;
     font-weight: bold;
 }
+
 .dropdowns select {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     width: 100%;
 }
+
 .dropdowns input {
     width: 100%;
     padding: 10px;
@@ -235,15 +311,10 @@ nav ul li .dropdown li a:hover {
 .generate-btn:hover {
     background: linear-gradient(180deg, #3047B0, #0087FF); /* Gradient background */
 }
-.intro-text h2{
-    font-weight: lighter;
-}
-.highlighted-word {
-    color: #0087FF;
-    font-weight: bold;
-}
 
-/* Modal Styles *//* Desktop view (default) */
+/* Modal Styles */
+/* Modal Styles */
+/* Desktop view (default) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -265,7 +336,7 @@ nav ul li .dropdown li a:hover {
     max-width: 600px; /* Set max width for larger screens */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center; /* Center-align text and elements */
+    text-align: left; /* Align text and elements to the left */
     position: relative; /* For close button positioning */
 }
 
@@ -286,7 +357,7 @@ nav ul li .dropdown li a:hover {
 }
 
 #job-url {
-    color: #e60073; /* Pink color for the link */
+    color: #0087FF; /* Pink color for the link */
     display: block; /* Display as block for better spacing */
     margin: 10px 0; /* Margin for spacing */
     font-size: 18px; /* Increase font size */
@@ -314,6 +385,61 @@ nav ul li .dropdown li a:hover {
     z-index: 999; /* Ensure it's above modal */
 }
 
+.share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Align items vertically */
+    gap: 15px; /* Increased gap between buttons */
+    justify-content: center; /* Center-align buttons horizontally */
+}
+
+.share-buttons h2 {
+    flex: 0 0 auto; /* Don't grow, don't shrink, stay auto */
+    margin-right: 10px; /* Space between "Share Via" and buttons */
+}
+
+.share-buttons button {
+    padding: 12px ; /* Slightly bigger padding */
+    font-size: 16px; /* Increased font size */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #0087FF; /* Pink background color */
+    color: white; /* White text color */
+    text-align: center; /* Center-align text */
+}
+
+/* Share button logos */
+#share-button-whatsapp {
+    background-image: url('image (11)-Photoroom.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-line {
+    background-image: url('output-onlinepngtools-Photoroom.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-facebook {
+    background-image: url('fbpiink-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-IG {
+    background-image: url('igpinnk-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-TikTok {
+    background-image: url('tiktokpink-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 
 footer {
     padding: 10px 20px;
@@ -330,21 +456,6 @@ footer {
 .footer-left, .footer-right {
     margin: 0;
 }
-
-.back-button {
-    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.back-button:hover {
-    background-color: #0087FF;
-}
-
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -373,10 +484,10 @@ footer {
     .mobile-dropdown.show {
         display: block;
     }
-    .intro-text h1{
+    .intro-text1 h1{
         font-size: 30px; /* Adjust this size as needed */
     }
-    .intro-text .highlight{
+    .intro-text1 .highlight{
         font-size: 50px;
     }
    

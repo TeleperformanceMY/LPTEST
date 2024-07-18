@@ -1,136 +1,439 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Application</title>
-    <link rel="stylesheet" href="styles1.css">
-    <script src="script.js" defer></script>
+/* styles.css */
+body {
+    font-family: sancola system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('GMT_TP_Wave_Sep23_LightBlue.png') repeat-y center top / 100% auto;
+}
 
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="GMT_Logos Teleperformance_RGB_July 2023_purple gradient.png" alt="Teleperformance Logo">
-        </div>
-        <button class="back-button" onclick="window.history.back();">← Back</button>
-
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">About Us</a>
-                    <ul class="dropdown">
-                        <li><a href="https://www.teleperformance.com/en-us/locations/malaysia-site/malaysia/">TP Malaysia</a></li>
-                        <li><a href="https://www.teleperformance.com/en-us/locations/thailand-site/thailand/">TP Thailand</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Careers</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Hot Job 🌟</a></li>
-                        <li><a href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Stay Connected</a>
-                    <ul class="dropdown">
-                        <li><a href="https://www.instagram.com/teleperformance_malaysia/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon"> TPMY Instagram</a></li>
-                        <li><a href="https://www.instagram.com/teleperformance_thailand/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon"> TPTH Instagram</a></li>
-                        <li><a href="https://www.facebook.com/teleperformance.malaysia/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon"> TPMY Facebook</a></li>
-                        <li><a href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon"> TPTH Facebook</a></li>
-
-                    
-                    </ul>
-                </li>
-                
-                <li><a href="#" class="contact-us">Contact Us</a></li>
-                <li class="language-dropdown">
-                    <a href="#">Language</a>
-                    <ul class="dropdown">
-                        <li><a href="#" data-lang="en">English</a></li>
-                        <li><a href="#" data-lang="zh">Mandarin</a></li>
-                        <li><a href="#" data-lang="jp">Japanese</a></li>
-                    </ul>
-              
-                </li>
-                
-                <div class="mobile-menu">
-                    <button class="mobile-menu-button">☰</button>
-                    <ul class="mobile-dropdown">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Stay Connected</a></li>
-                        <li><a href="https://www.teleperformance.com/en-us/contact-us/" class="contact-us">Contact Us</a></li>
-                        <li><a href="#">Language</a></li>
-                    </ul>
-                </div>
-                
-        </nav>
-        
-        <button class="mobile-menu-button">&#9776;</button>
-
-    </header>
-    <main>
-    <section class="intro">
-        <div class="intro-text">
-            <h1>Find your perfect <span class="highlight">Job!</span></h1>
-            <h2>Our team will respond within  <span class="highlighted-word">48 hours!</span></h2>
-
-        </div>
-    </section>
-
-    <div class="find-job">
-    <h2>Find your perfect job!</h2>
-    <div class="dropdowns">
-        <label for="language-select">
-            Preferred Language
-            <select id="language-select" class="footer-select">
-                <option value="" disabled selected>Choose your language</option>
-            </select>
-        </label>
-        <hr style="border: 1px solid #ffffff; margin: 5px 0;">
-        <label for="location-select">
-            Choose Your Location
-            <select id="location-select" class="footer-select">
-                <option value="" disabled selected>Choose your location</option>
-            </select>
-        </label>
-        <hr style="border: 1px solid #ffffff; margin: 5px 0;">
-        <label for="job-type-select">
-            Choose Your Job Type
-            <select id="job-type-select" class="footer-select">
-                <option value="" disabled selected>Choose your job type</option>
-            </select>
-        </label>
-    </div>
- 
-    <div class="container">
-
-        <button id="generate-btn" class="generate-btn">Generate QR Code & Apply Now!</button>
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: none;
+    padding: 10px 20px;
+}
 
 
-              
-    </div>
-</main>
-    <footer>
-        <p class="footer-left">© 2024 Teleperformance. All rights reserved.</p>
-        <p class="footer-right">#ElevateAsia #MoreTogether</p>
-        
-    </footer>
-    <div id="qr-modal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <canvas id="qr-code"></canvas>
-            <p><a id="job-url" href="#" target="_blank"></a></p>
-            <div class="share-buttons">
-                <h2> Share Via</h2>
-                <div>
-                    <button id="share-button-whatsapp"></button>
-                    <button id="share-button-line"></button>
-                </div>
-            </div>
-        </div>
-    </div>
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    position: relative;
+}
+.logo-icon {
+    width: 20px; /* Adjust the width as per your design */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Optional: Adjust spacing between logo and text */
+    vertical-align: middle; /* Align the logo vertically with the text */
+}
+
+/* Arrow styles */
+nav ul li a::after
+  {
+    content: '';
+    position: absolute;
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
+}
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #0087FF; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a::before {
+    top: 50%;
+}
+
+nav ul li a:hover::after,
+nav ul li a:hover::before {
+    border-top-color: #0087FF; /* Hover arrow color */
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow */
+}
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: whitesmoke;
+    box-shadow: none;
+    z-index: 10;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li .dropdown li a {
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    font-weight: normal; /* Normal font weight for dropdown items */
+    white-space: nowrap; /* Ensures text is in one line */
+}
+
+nav ul li .dropdown li a:hover {
+    background-color: transparent;
+}
+
+.contact-us {
+    color: #fff;
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
+    border-radius: 5px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+
+/* Intro section styles */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: transparent;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    flex: 1;
+    padding: 0px;
+    background-color: transparent;
+}
+
+.intro-text h1 {
+    font-size: 70px; /* Increase the size */
+    font-weight: bold;
+    color: #333;
+}
+
+.intro-text .highlight {
+    font-size: 100px; /* Increase the size more for the highlight */
+    color: #0087FF;
+    background: #0087FF ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.find-job {
+    flex: 2;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 66%;
+}
+
+.hot-job h2, .find-job h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hot-job h1, .find-job h1 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.hot-job p, .find-job p {
+    color: #555;
+    margin-bottom: 20px;
+}
+.container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+}
+
+.dropdowns {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;}
+
+.dropdowns label {
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+.dropdowns select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+.dropdowns input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.generate-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    color: white;
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.generate-btn:hover {
+    background: linear-gradient(180deg, #3047B0, #0087FF); /* Gradient background */
+}
+.intro-text h2{
+    font-weight: lighter;
+}
+.highlighted-word {
+    color: #0087FF;
+    font-weight: bold;
+}
+
+/* Modal Styles *//* Desktop view (default) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scrolling if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Set max width for larger screens */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center-align text and elements */
+    position: relative; /* For close button positioning */
+}
+
+.close {
+    color: #aaa;
+    position: absolute; /* Position close button */
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#job-url {
+    color: #e60073; /* Pink color for the link */
+    display: block; /* Display as block for better spacing */
+    margin: 10px 0; /* Margin for spacing */
+    font-size: 18px; /* Increase font size */
+    text-decoration: none; /* Remove underline */
+}
+
+#job-url:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+#qr-code {
+    display: block;
+    margin: 20px auto; /* Center the QR code */
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 999; /* Ensure it's above modal */
+}
+
+
+footer {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: rgba(66, 66, 66, 0.9);
+    color: white;
+    position: relative; /* Position it normally within the flow */
+     margin-top: 50px; /* Space above the footer */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-right {
+    margin: 0;
+}
+
+.back-button {
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #0087FF;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .intro {
+        flex-direction: column;
+    }
+
+    .intro-video {
+        max-width: 100%;
+    }
+
+    .job-section {
+        flex-direction: column;
+    }
+
+    .mobile-dropdown.show {
+        display: block;
+    }
+    .intro-text h1{
+        font-size: 30px; /* Adjust this size as needed */
+    }
+    .intro-text .highlight{
+        font-size: 50px;
+    }
+   
+        .hot-job, .find-job {
+            width: 100%;
+            padding: 0px;
+            margin: 0px 0;
+        }
     
- </body>
-</html>
+        .hot-job h1, .find-job h1 {
+            font-size: 14px;
+        }
+    
+        .hot-job p, .find-job p {
+            font-size: 14px;
+        }
+    
+        .apply-btn, .generate-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 14px;
+        }
+    
+        .dropdowns label {
+            font-size: 14px;
+        }
+    
+        .dropdowns select {
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        /* Mobile view */
+        .modal {
+            display: block; /* Display modal in mobile view */
+        }
+    
+        .modal-content {
+            width: 90%; /* Increase width to 90% on smaller screens */
+            margin: 20% auto; /* Increase top margin for better positioning */
+            padding: 10px; /* Reduce padding for smaller screens */
+        }
+    
+        .close {
+            font-size: 24px; /* Reduce font size for smaller screens */
+            top: 5px; /* Adjust positioning */
+            right: 10px; /* Adjust positioning */
+        }
+    
+        #job-url {
+            font-size: 16px; /* Reduce font size for smaller screens */
+        }
+    }
+    
+    /* Hide modal for screens larger than 768px */
+    @media (min-width: 769px) {
+        .modal {
+            display: none; /* Hide modal in desktop view */
+        }
+    }

@@ -1,19 +1,22 @@
 /* styles.css */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: sancola system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: transparent;
+    background: url('GMT_TP_Wave_Sep23_LightBlue.png') repeat-y center top / 100% auto;
 }
 
+/* Header styles */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    box-shadow: none;
+    padding: 10px 20px;
 }
+
 
 .logo img {
     height: 50px;
@@ -37,10 +40,52 @@ nav ul li a {
     color: #333;
     font-weight: bold;
     padding: 10px;
+    position: relative;
+}
+.logo-icon {
+    width: 20px; /* Adjust the width as per your design */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Optional: Adjust spacing between logo and text */
+    vertical-align: middle; /* Align the logo vertically with the text */
 }
 
-nav ul li a:hover {
-    color: #ff0080;
+/* Arrow styles */
+nav ul li a::after
+  {
+    content: '';
+    position: absolute;
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
+}
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #0087FF; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a::before {
+    top: 50%;
+}
+
+nav ul li a:hover::after,
+nav ul li a:hover::before {
+    border-top-color: #0087FF; /* Hover arrow color */
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow */
 }
 
 nav ul li .dropdown {
@@ -48,8 +93,8 @@ nav ul li .dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: whitesmoke;
+    box-shadow: none;
     z-index: 10;
 }
 
@@ -66,16 +111,17 @@ nav ul li .dropdown li a {
     padding: 10px 20px;
     display: block;
     color: #333;
+    font-weight: normal; /* Normal font weight for dropdown items */
+    white-space: nowrap; /* Ensures text is in one line */
 }
 
 nav ul li .dropdown li a:hover {
-    background-color: #f1f1f1;
+    background-color: transparent;
 }
 
 .contact-us {
     color: #fff;
-    background-color: #ff0080;
-    padding: 10px 20px;
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
     border-radius: 5px;
 }
 
@@ -90,78 +136,104 @@ nav ul li .dropdown li a:hover {
     font-size: 24px;
 }
 
+/* Intro section styles */
 .intro {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 20px;
     background-color: transparent;
     flex-wrap: wrap;
-    text-align: center;
 }
 
 .intro-text {
-    max-width: 800px;
+    flex: 1;
+    padding: 0px;
+    background-color: transparent;
 }
 
 .intro-text h1 {
-    font-size: 36px;
+    font-size: 70px; /* Increase the size */
     font-weight: bold;
     color: #333;
 }
 
-.intro-text p {
-    color: #555;
+.intro-text .highlight {
+    font-size: 100px; /* Increase the size more for the highlight */
+    color: #0087FF;
+    background: #0087FF ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
-.application-form {
-    display: flex;
-    justify-content: center;
+.find-job {
+    flex: 2;
     padding: 20px;
-    background-color: transparent;
-}
-
-form {
-    max-width: 600px;
-    width: 100%;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 66%;
 }
 
-.form-group {
+.hot-job h2, .find-job h2 {
+    color: #333;
     margin-bottom: 20px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
+.hot-job h1, .find-job h1 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
-.form-group input {
+.hot-job p, .find-job p {
+    color: #555;
+    margin-bottom: 20px;
+}
+.container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+}
+
+.dropdowns {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;}
+
+.dropdowns label {
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+.dropdowns select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+.dropdowns input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
-.apply-btn {
+.generate-btn {
     display: block;
     width: 100%;
     padding: 10px 20px;
     color: white;
-    background: linear-gradient(45deg, #007bff, #00c6ff);
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
 }
 
-.apply-btn:hover {
-    background: linear-gradient(45deg, #0056b3, #00a2ff);
+.generate-btn:hover {
+    background: linear-gradient(180deg, #3047B0, #0087FF); /* Gradient background */
 }
 
 footer {
@@ -172,6 +244,19 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+.back-button {
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #0087FF;
 }
 
 @media (max-width: 768px) {

@@ -125,82 +125,6 @@ nav ul li .dropdown li a:hover {
     background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
     border-radius: 5px;
 }
-.custom-mobile-menu {
-    display: none; /* Hide custom mobile menu by default */
-    background-color: #333; /* Example background color */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000; /* Ensure it's above other content */
-    overflow-y: auto; /* Enable scrolling if needed */
-}
-
-.custom-mobile-dropdown,
-.custom-mobile-submenu {
-    display: none; /* Hide submenus by default */
-    list-style-type: none;
-    padding: 0;
-}
-
-.custom-mobile-dropdown.show {
-    display: block; /* Show mobile menu when 'show' class is applied */
-    padding: 20px; /* Example padding */
-}
-
-.custom-mobile-submenu {
-    padding: 10px;
-    background-color: #444; /* Example submenu background color */
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
-.custom-mobile-submenu li {
-    padding: 10px 0;
-}
-
-.custom-mobile-submenu li a {
-    color: white; /* Example text color */
-    text-decoration: none;
-    font-weight: normal;
-}
-
-/* Show custom mobile menu button on mobile view */
-@media (max-width: 768px) {
-    .custom-mobile-menu {
-        display: none; /* Ensure menu is hidden initially on mobile */
-    }
-
-    .custom-mobile-menu-button {
-        background: none;
-        border: none;
-        font-size: 20px;
-        color: #E40276; /* Example text color */
-        cursor: pointer;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 1500; /* Ensure it's above other content */
-    }
-}
-
-/* Hide custom mobile menu on desktop view */
-@media (min-width: 769px) {
-    .custom-mobile-menu {
-        display: none; /* Hide custom mobile menu on desktop */
-    }
-
-    .custom-mobile-menu-button {
-        display: none; /* Hide menu button on desktop */
-    }
-
-    .custom-mobile-dropdown {
-        display: none; /* Hide custom mobile dropdown on desktop */
-    }
-}
-
-
 
 
 /* Intro section styles */
@@ -591,10 +515,57 @@ footer {
             font-size: 16px; /* Reduce font size for smaller screens */
         }
     }
-    
-    /* Hide modal for screens larger than 768px */
-    @media (min-width: 769px) {
-        .modal {
-            display: none; /* Hide modal in desktop view */
-        }
+    /* Basic styling for mobile menu toggle and dropdown */
+.mobile-menu {
+    display: none; /* Hide mobile menu by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+    z-index: 1000;
+}
+
+.mobile-menu-list {
+    list-style-type: none; /* Remove bullet points from menu */
+    padding-left: 0; /* Remove default padding */
+}
+
+.mobile-menu-list li {
+    border-bottom: 1px solid #ddd; /* Optional: Add separators between menu items */
+}
+
+.mobile-menu-list li ul {
+    display: none; /* Hide submenus by default */
+}
+
+.mobile-menu-list li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.mobile-menu-toggle {
+    display: none; /* Hide toggle button initially */
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none; /* Hide desktop menu on smaller screens */
     }
+
+    .mobile-menu-toggle {
+        display: block; /* Show toggle button on smaller screens */
+    }
+
+    .mobile-menu.open {
+        display: block; /* Show mobile menu when 'open' class is applied */
+    }
+
+    .mobile-menu-list li:hover > ul {
+        display: block; /* Show submenu on hover */
+    }
+}

@@ -437,6 +437,8 @@ nav ul li .dropdown li a:hover {
     align-items: center; /* Align items vertically */
     gap: 15px; /* Increased gap between buttons */
     justify-content: center; /* Center-align buttons horizontally */
+    background-color: transparent; /* Pink background color */
+
 }
 
 .share-buttons h2 {
@@ -446,19 +448,19 @@ nav ul li .dropdown li a:hover {
 
 .share-buttons button {
     padding: 12px ; /* Slightly bigger padding */
-    font-size: 16px; /* Increased font size */
+    font-size: 24px; /* Increased font size */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-     color: white; /* White text color */
-    text-align: center; /* Center-align text */
+     text-align: center; /* Center-align text */
 }
 
 /* Share button logos */
 #share-button-whatsapp {
     background-image: url('image (11)-Photoroom.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 24px;
+
 }
 
 #share-button-line {

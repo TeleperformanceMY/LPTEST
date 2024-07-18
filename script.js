@@ -1,53 +1,121 @@
-//Initialization and Language Content Update
-
 document.addEventListener('DOMContentLoaded', () => {
     const languages = {
         en: {
-            title: "We are on the hunt for the One!",
-            ad: "Are you the One?!",
-            join: "Our team will respond within 48 hours!",
-            videoSrc: "video-placeholder.mp4",
-            moreJobs: "Generate your QR Code & Apply Now!"
+            about_us: "About Us",
+            careers: "Careers",
+            hot_job: "🔥 Hot Job 🔥",
+            opportunities: "🌟 Opportunities 🌟",
+            refer_friend: "Refer A Friend",
+            stay_connected: "Stay Connected",
+            contact_us: "contact Us",
+            language: 'language',
+            hot_job_content: "Hot Job Of The Week!",
+            hot_job_description: "Check out our <strong>“Hot Job of the Week”</strong> and join our award-winning team! This role offers fantastic growth opportunities, competitive benefits, and the chance to work with cutting-edge AI technology. Apply now and be part of our journey to excellence!",
+            apply_now: "Apply Now!",
+            find_job: "Find your perfect job!",
+            choose_language: "language",
+            choose_location: "Choose your location",
+            choose_job_type: "Choose your job type",
+            generate_qr: "Generate QR Code & Apply Now!",
+            intro_text: "We are on the hunt for the <span class='highlight'>One</span>",
+            team_response: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
+            intro_text1: "                Find your perfect <span class='highlight'>Job!</span>",
+            intro_text2: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
+            share_via: "share viia"
+
+
         },
         zh: {
-            title: "寻找TA！",
-            ad: "你是TA吗？！",
-            join: "我们的团队将在48小时内回复！",
-            videoSrc: "video-placeholder.mp4",
-            moreJobs: "生成您的QR码并立即申请！"
+            about_us: "关于我们",
+            careers: "职业机会",
+            hot_job: "🔥 热门职位 🔥",
+            opportunities: "🌟 机会 🌟",
+            refer_friend: "介绍个朋友",
+            stay_connected: "保持联系",
+            contact_us: "联系我们",
+            language: '语言',
+
+            hot_job_content: "本周热门职位!",
+            hot_job_description: "查看我们的<strong>“本周热门职位”</strong>，加入我们屡获殊荣的团队吧！这个职位提供了绝佳的成长机会、具有竞争力的福利待遇，以及与尖端AI技术合作的机会。立即申请，成为我们追求卓越之旅的一部分！",
+            apply_now: "立即申请！",
+            find_job: "找到你的理想工作！",
+            choose_language: "首选语言",
+            choose_location: "选择您的位置",
+            choose_job_type: "选择您的工作类型",
+            generate_qr: "生成二维码并立即申请！",
+            intro_text: "我们正在寻找那个<span class='highlight'>合适的人</span>",
+            team_response: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
+            intro_text1: "      找到你的完美 <span class='highlight'>工作！</span>",
+            intro_text2: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
+            share_via: "分享"
+
+
         },
         jp: {
-            title: "THE ONEを探しています！",
-            ad: "あなたはTHE ONEですか？！",
-            join: "チームからの回答まで48時間以内にお返事いたします！",
-            videoSrc: "video-placeholder.mp4",
-            moreJobs: "QRコードを生成して今すぐ応募！"
+            about_us: "会社概要",
+            careers: "採用情報",
+            hot_job: "🔥 ホットジョブ 🔥",
+            opportunities: "🌟 採用情報 🌟",
+            refer_friend: "友達紹介",
+            stay_connected: "つながりを続ける  ",
+            contact_us: "お問い合わせ",
+            language: '言語',
+
+            hot_job_content: "今週の注目のお仕事!",
+            hot_job_description: "当社の <strong>「今週の注目のお仕事」</strong>をチェックして、受賞歴のあるチームに参加しませんか！この職務は、素晴らしい成長の機会、競争力のある福利厚生、そして最先端のAI テクノロジーを活用する機会を提供します。今すぐ応募して、私たちの卓越性への旅の一員になりませんか！",
+            apply_now: "今すぐ応募!",
+            find_job: "理想の仕事を見つける!",
+            choose_language: "勤務地を選択",
+            choose_location: "あなたの場所を選択してください",
+            choose_job_type: "職種を選ぶ",
+            generate_qr: "QRコードを作成し、今すぐご応募ください！",
+            intro_text: "私たちは<span class='highlight'>1つ</span>を探しています",
+            team_response: "チームからの回答まで<span class='highlighted-word'>48時間</span>以内にお返事いたします！",
+            intro_text1: "                Find your perfect <span class='highlight'>Job!</span>",
+            intro_text2:  "チームからの回答まで<span class='highlighted-word'>48時間</span>以内にお返事いたします！",
+            share_via: "share viia"
         }
     };
-    const hotJobLink = document.getElementById('hot-job');
-    const applyBtn = document.getElementById('apply-btn');
 
-    hotJobLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.location.href = applyBtn.getAttribute('href');
-    });
+    // Elements to be translated
+    const elementsToTranslate = {
+        '.intro-text h1': 'intro_text',
+        '.hot-job p': 'hot_job_description',
+        '.find-job p': 'team_response',
+        '.generate-btn': 'generate_qr',
+        '.language-dropdown > a': 'choose_language',
+        '.find-job h2': 'find_job',
+        '.intro-text1 h1': 'intro_text1',
+        '.intro-text1 h2': 'intro_text2',
+        'header ul li:nth-child(1) a': 'about_us',
+        'header ul li:nth-child(2) a': 'careers',
+        'header ul li:nth-child(2) ul li:nth-child(1) a': 'hot_job',
+        'header ul li:nth-child(2) ul li:nth-child(2) a': 'opportunities',
+        'header ul li:nth-child(2) ul li:nth-child(3) a': 'refer_friend',
+        'header ul li:nth-child(3) a': 'stay_connected',
+        'header ul li:nth-child(4) a': 'contact_us',
+        '.language-dropdown > a': 'language',
+        '.share-buttons h2': 'share_via',
+        '.hot-job h2':'hot_job_content',
+        '.apply-btn' :'apply_now'
+
+    };
+    
     const dropdown = document.querySelector('.language-dropdown');
     const selectDropdown = document.getElementById('languages');
-    const title = document.querySelector('.intro-text h1');
-    const adSticker = document.querySelector('.hot-job p');
-    const footerText = document.querySelector('.find-job p');
-    const video = document.querySelector('.intro-video video');
-    const moreJobsButton = document.querySelector('.generate-btn');
+    const urlParams = new URLSearchParams(window.location.search);
 
     // Function to update content based on selected language
     function updateContent(language) {
         const langContent = languages[language];
         if (langContent) {
-            title.textContent = langContent.title;
-            adSticker.textContent = langContent.ad;
-            footerText.textContent = langContent.join;
-            video.src = langContent.videoSrc;
-            moreJobsButton.textContent = langContent.moreJobs;
+            Object.keys(elementsToTranslate).forEach(selector => {
+                const key = elementsToTranslate[selector];
+                const element = document.querySelector(selector);
+                if (element && langContent[key]) {
+                    element.innerHTML = langContent[key]; // Use innerHTML to render HTML content
+                }
+            });
         }
     }
 
@@ -70,11 +138,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to update URL parameter
     function updateURLParameter(param, value) {
-        const currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set(param, value);
-        window.history.replaceState(null, '', currentUrl);
+        urlParams.set(param, value);
+        const newURL = `${window.location.pathname}?${urlParams.toString()}`; // Corrected quotation marks
+        window.history.replaceState(null, '', newURL);
     }
+
+    // Initial setup based on URL parameter or default language
+    const langParam = urlParams.get('lang') || 'en';
+    updateContent(langParam);
 });
+
 
 
 //Generating Final URL with UTM Parameters
@@ -451,14 +524,14 @@ document.getElementById("share-button-IG").addEventListener("click", function() 
     const instagramLink = `https://www.instagram.com/?url=${encodeURIComponent(document.getElementById('job-url').href + "\n\n" + message + "\n\n" + message2)}`;
     window.open(instagramLink, "_blank");
 });
+ 
+ 
+// Get the mobile menu button and menu elements
+var mobileMenuButton = document.getElementById('mobile-menu-button');
+var customMobileMenu = document.querySelector('.custom-mobile-menu');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileDropdown = document.querySelector('.mobile-dropdown');
-
-    if (mobileMenuButton && mobileDropdown) {
-        mobileMenuButton.addEventListener('click', () => {
-            mobileDropdown.classList.toggle('show');
-        });
-    }
+// Toggle mobile menu visibility
+mobileMenuButton.addEventListener('click', function() {
+    customMobileMenu.classList.toggle('show');
 });
+

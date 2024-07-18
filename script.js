@@ -62,18 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
             language: '言語',
 
             hot_job_content: "今週の注目のお仕事!",
-            hot_job_description: "当社の <strong>「今週の注目のお仕事」</strong>をチェックして、受賞歴のあるチームに参加しませんか！この職務は、素晴らしい成長の機会、競争力のある福利厚生、そして最先端のAI テクノロジーを活用する機会を提供します。今すぐ応募して、私たちの卓越性への旅の一員になりませんか！",
+            hot_job_description: "当社の<strong>「今週の注目のお仕事」</strong>をチェックして、受賞歴のあるチームに参加しませんか！この職務は、素晴らしい成長の機会、競争力のある福利厚生、そして最先端のAI テクノロジーを活用する機会を提供します。今すぐ応募して、私たちの卓越性への旅の一員になりませんか！",
             apply_now: "今すぐ応募!",
             find_job: "理想の仕事を見つける!",
             choose_language: "勤務地を選択",
             choose_location: "あなたの場所を選択してください",
             choose_job_type: "職種を選ぶ",
             generate_qr: "QRコードを作成し、今すぐご応募ください！",
-            intro_text: "私たちは<span class='highlight'>1つ</span>を探しています",
-            team_response: "チームからの回答まで<span class='highlighted-word'>48時間</span>以内にお返事いたします！",
-            intro_text1: "                Find your perfect <span class='highlight'>Job!</span>",
-            intro_text2:  "チームからの回答まで<span class='highlighted-word'>48時間</span>以内にお返事いたします！",
-            share_via: "share viia"
+            intro_text: "私たちは<span class='highlight'>誰 か</span>を探していま",
+            team_response: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
+            intro_text1: " 理想の<span class='highlight'>お仕事</span>を見つけましょう！",
+            intro_text2:  "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
+            share_via: "share via"
         }
     };
 
@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.hot-job h2': 'hot_job_content',
         '.apply-btn': 'apply_now'
     };
+    
     
     const dropdown = document.querySelector('.language-dropdown');
     const selectDropdown = document.getElementById('languages');
@@ -533,13 +534,8 @@ document.getElementById("share-button-IG").addEventListener("click", function() 
     window.open(instagramLink, "_blank");
 });
  
- 
-// Get the mobile menu button and menu elements
-var mobileMenuButton = document.getElementById('mobile-menu-button');
-var customMobileMenu = document.querySelector('.custom-mobile-menu');
-
-// Toggle mobile menu visibility
-mobileMenuButton.addEventListener('click', function() {
-    customMobileMenu.classList.toggle('show');
+$(document).ready(function() {
+    $('.mobile-menu-toggle').click(function() {
+        $('.mobile-menu').slideToggle();
+    });
 });
-
